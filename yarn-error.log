@@ -1,0 +1,84 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Beknur\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -gh-pages
+
+PATH: 
+  C:\Users\Beknur\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Beknur\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Go\bin;C:\Users\Beknur\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;C:\Users\Beknur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Beknur\AppData\Roaming\npm;C:\Users\Beknur\go\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.0.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/-p: Not found
+      at Request.params.callback [as _callback] (C:\Users\Beknur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\Beknur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\Beknur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\Beknur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1218:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "kozodoi-club-hack",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "surge-deploy": "npm run build && surge ./build --domain kozodoi-club-hack.surge.sh",
+      "predeploy": "npm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+      "cross-env": "^5.2.0",
+      "react-hot-loader": "^4.9.0",
+      "react-scripts": "^3.1.2",
+      "surge": "^0.21.3",
+      "gh-pages": "^3.1.0"
+    },
+    "dependencies": {
+      "@vkontakte/icons": "^1.10.0",
+      "@vkontakte/vk-connect": "^1.6.5",
+      "@vkontakte/vkui": "^2.30.7",
+      "accounting": "^0.4.1",
+      "babel-eslint": "^10.0.3",
+      "chalk": "^2.4.2",
+      "core-js": "^3.1.4",
+      "prop-types": "^15.7.2",
+      "react": "^16.9.0",
+      "react-dom": "^16.9.0",
+      "react-helmet": "^5.2.1",
+      "react-router": "^5.1.1",
+      "react-router-dom": "^5.1.1"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
