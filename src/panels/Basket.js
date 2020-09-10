@@ -11,6 +11,7 @@ import './place.css';
 const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
   const [ faster, setFaster ] = useState(true);
   const [ time, setTime ] = useState('');
+  const [ isValid, setValid ] = useState(true);
   const [ selfService, setSelfService ] = useState(false);
   const area = foodAreas.filter(area => area.id === areaId)[0];
   const item = area.items.filter(item => item.id === itemId)[0];
@@ -113,28 +114,30 @@ const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
             checked={faster} 
             onToggle={() => {
               if (faster) {
-                setTime(null)
                 setFaster(false);
+                setValid(false)
               } else {
-                setTime('');
+                setValid(true)
                 setFaster(true);
               }
+              setTime('')
             }}
           />
         </div>
         <div className="Place__choice-item">
           <span>Назначить</span>
-          <input style={{border: time == null ? "3px solid red" : "3px solid green"}} type="text"
+          <input style={{border: !isValid ? "3px solid red" : "3px solid green"}} type="text"
             value={time}
             onFocus={() => {
               setFaster(false);
             }}
             onChange={event => {
               if (/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(event.target.value)) {
-                setTime(event.target.value)
+                setValid(true)
               } else {
-                setTime(null)
+                setValid(false)
               }
+              setTime(event.target.value)
               setFaster(false);
             }}
             onBlur={() => {
@@ -154,7 +157,7 @@ const Basket = ({ match: { params: { areaId, itemId }}, foodAreas, order }) => {
         </div>
       </div>
       <footer className="Place__footer">
-        <Link to={time !== null ? `/order/${area.id}/${item.id}` : `/basket/${area.id}/${item.id}`} className="Place__order">
+        <Link to={isValid ? `/order/${area.id}/${item.id}` : `/basket/${area.id}/${item.id}`} className="Place__order">
           Оплатить {price}
         </Link>
       </footer>
